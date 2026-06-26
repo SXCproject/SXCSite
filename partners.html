@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SexCoin - Partners</title>
+<link rel="icon" type="image/png" sizes="192x192" href="Slogo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  overflow-x:hidden;
+}
+
+/* LIGHT RED AMBIENT GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(255,0,0,0.05), transparent 70%);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
+
+/* HEADER */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,0.88);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  z-index:1000;
+}
+
+.header-logo{
+  height:58px;
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:35px;
+}
+
+.menu a{
+  color:#222;
+  text-decoration:none;
+  font-family:'Orbitron', sans-serif;
+  font-size:0.9rem;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  color:#ff2a2a;
+  transform:translateY(-2px);
+}
+
+/* BUTTON */
+.ecosystem-btn{
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid rgba(255,0,0,0.25);
+  background:#fff;
+  color:#ff2a2a;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.ecosystem-btn:hover{
+  background:#ff2a2a;
+  color:white;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:28px;
+  color:#222;
+  cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:80px;
+  left:0;
+  width:100%;
+  background:white;
+  flex-direction:column;
+  text-align:center;
+  z-index:999;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.mobile-menu a{
+  padding:16px;
+  display:block;
+  color:#222;
+  font-family:'Orbitron', sans-serif;
+  font-weight:bold;
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.mobile-menu a:hover{
+  background:rgba(255,0,0,0.05);
+  color:#ff2a2a;
+}
+
+/* HERO */
+.hero{
+  padding-top:150px;
+  text-align:center;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.hero h1{
+  font-size:4.2rem;
+  font-family:'Playfair Display', serif;
+  color:#111;
+  margin-bottom:20px;
+}
+
+.hero-subtitle{
+  color:#ff2a2a;
+  letter-spacing:3px;
+  margin-bottom:50px;
+  font-size:0.9rem;
+  font-family:'Orbitron', sans-serif;
+}
+
+/* INTRO */
+.intro{
+  width:90%;
+  max-width:900px;
+  margin:0 auto 80px;
+  text-align:center;
+}
+
+.intro p{
+  color:#555;
+  line-height:1.9;
+  font-size:1.05rem;
+}
+
+/* PARTNER GRID */
+.partner-grid{
+  width:90%;
+  max-width:1300px;
+  margin:0 auto 120px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:30px;
+}
+
+/* CLEAN PREMIUM CARDS */
+.partner-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:24px;
+  padding:40px 30px;
+  transition:0.35s;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,0.04);
+}
+
+.partner-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(255,0,0,0.15);
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ICONS */
+.partner-icon{
+  width:90px;
+  height:90px;
+  margin:0 auto 25px;
+  border-radius:50%;
+  background:linear-gradient(to bottom right, #ff2a2a, #c40000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  color:white;
+  box-shadow:0 8px 20px rgba(255,0,0,0.18);
+}
+
+.partner-card h2{
+  color:#111;
+  margin-bottom:18px;
+  font-size:1.2rem;
+  letter-spacing:1px;
+  font-family:'Orbitron', sans-serif;
+}
+
+.partner-card p{
+  color:#666;
+  line-height:1.8;
+  font-size:1rem;
+}
+
+/* FUTURE */
+.future{
+  width:90%;
+  max-width:1000px;
+  margin:0 auto 120px;
+  text-align:center;
+}
+
+.future h2{
+  color:#111;
+  font-size:2.7rem;
+  margin-bottom:25px;
+  font-family:'Playfair Display', serif;
+}
+
+.future p{
+  color:#666;
+  line-height:1.9;
+  font-size:1.05rem;
+  max-width:750px;
+  margin:auto;
+}
+
+/* FOOTER */
+.footer{
+  padding:50px 20px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  text-align:center;
+  color:#888;
+  font-size:0.95rem;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .menu,
+  .ecosystem-btn{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .header{
+    padding:0 20px;
+    height:70px;
+  }
+
+  .header-logo{
+    height:42px;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    font-size:2.8rem;
+  }
+
+  .future h2{
+    font-size:2rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <img src="Slogo.png" class="header-logo">
+
+  <nav class="menu">
+    <a href="index.html">HOME</a>
+    <a href="tokenomics.html">TOKENOMICS</a>
+    <a href="how-it-works.html">HOW IT WORKS</a>
+    <a href="partners.html">PARTNERS</a>
+    <a href="Team.html">TEAM</a>
+  </nav>
+
+  <a href="#" class="ecosystem-btn">JOIN ECOSYSTEM</a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="tokenomics.html">TOKENOMICS</a>
+  <a href="how-it-works.html">HOW IT WORKS</a>
+  <a href="partners.html">PARTNERS</a>
+  <a href="#">JOIN ECOSYSTEM</a>
+</div>
+
+<section class="hero">
+  <h1>PARTNERS</h1>
+  <div class="hero-subtitle">
+    BUILDING A DIGITAL REWARD ECOSYSTEM
+  </div>
+</section>
+
+<section class="intro">
+  <p>
+    SexCoin collaborates with premium digital platforms, creators,
+    subscription services and online ecosystems to develop a modern
+    cashback infrastructure powered by crypto utility.
+  </p>
+</section>
+
+<section class="partner-grid">
+
+  <div class="partner-card">
+    <div class="partner-icon">🔥</div>
+    <h2>PREMIUM PLATFORMS</h2>
+    <p>
+      Digital entertainment services integrating reward-based participation.
+    </p>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-icon">💎</div>
+    <h2>EXCLUSIVE SERVICES</h2>
+    <p>
+      Premium ecosystems focused on memberships, subscriptions and user engagement.
+    </p>
+  </div>
+
+  <div class="partner-card">
+    <div class="partner-icon">⚡</div>
+    <h2>REWARD NETWORK</h2>
+    <p>
+      Real-world and digital activity connected through automated cashback logic.
+    </p>
+  </div>
+
+</section>
+
+<section class="future">
+  <h2>EXPANDING THE ECOSYSTEM</h2>
+  <p>
+    New integrations, creators and utility layers will continuously expand
+    the SexCoin network and increase real usage opportunities.
+  </p>
+</section>
+
+<footer class="footer">
+  © 2026 SexCoin — All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display =
+    menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

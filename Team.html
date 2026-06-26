@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SexCoin Team</title>
+
+<link rel="icon" type="image/png" sizes="192x192" href="Slogo2.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#fff;
+  color:#1a1a1a;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(255,0,0,0.06), transparent 70%);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
+
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  z-index:1000;
+}
+
+.header-logo{
+  height:58px;
+}
+
+.menu{
+  display:flex;
+  gap:35px;
+}
+
+.menu a{
+  color:#222;
+  text-decoration:none;
+  font-family:'Orbitron',sans-serif;
+  font-size:0.9rem;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.menu a:hover{
+  color:#ff2a2a;
+  transform:translateY(-2px);
+}
+
+.buy-btn{
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid rgba(255,0,0,0.25);
+  background:#fff;
+  color:#ff2a2a;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.buy-btn:hover{
+  background:#ff2a2a;
+  color:white;
+}
+
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:80px;
+  left:0;
+  width:100%;
+  background:white;
+  flex-direction:column;
+  text-align:center;
+  z-index:999;
+}
+
+.mobile-menu a{
+  padding:16px;
+  text-decoration:none;
+  color:#222;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  font-family:'Orbitron',sans-serif;
+}
+
+.hero{
+  padding-top:150px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:4rem;
+  font-family:'Playfair Display',serif;
+}
+
+.subtitle{
+  margin-top:15px;
+  color:#ff2a2a;
+  font-family:'Orbitron',sans-serif;
+  letter-spacing:3px;
+  font-size:.9rem;
+}
+
+.intro{
+  max-width:850px;
+  margin:50px auto;
+  text-align:center;
+  color:#666;
+  line-height:1.8;
+  padding:0 20px;
+}
+
+.team-grid{
+  width:90%;
+  max-width:1200px;
+  margin:80px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.member{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:22px;
+  padding:35px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.04);
+  transition:.3s;
+}
+
+.member:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,0,0,.2);
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.member img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+
+.member h3{
+  color:#111;
+  margin-bottom:8px;
+}
+
+.role{
+  color:#ff2a2a;
+  font-family:'Orbitron',sans-serif;
+  font-size:.8rem;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+
+.member p{
+  color:#666;
+  line-height:1.7;
+}
+
+.footer{
+  text-align:center;
+  padding:50px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  color:#888;
+  margin-top:60px;
+}
+
+@media(max-width:900px){
+
+  .menu,
+  .buy-btn{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .header{
+    padding:0 20px;
+    height:70px;
+  }
+
+  .header-logo{
+    height:42px;
+  }
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <img src="Slogo.png" class="header-logo">
+
+  <nav class="menu">
+    <a href="index.html">HOME</a>
+    <a href="tokenomics.html">TOKENOMICS</a>
+    <a href="how-it-works.html">HOW IT WORKS</a>
+    <a href="partners.html">PARTNERS</a>
+    <a href="team.html">TEAM</a>
+  </nav>
+
+  <a class="buy-btn">JOIN ECOSYSTEM</a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="tokenomics.html">TOKENOMICS</a>
+  <a href="how-it-works.html">HOW IT WORKS</a>
+  <a href="partners.html">PARTNERS</a>
+  <a href="team.html">TEAM</a>
+</div>
+
+<section class="hero">
+  <h1>MEET THE TEAM</h1>
+  <div class="subtitle">THE PEOPLE BEHIND SEXCOIN</div>
+</section>
+
+<section class="intro">
+  SexCoin is built by a passionate team focused on innovation,
+  blockchain technology and long-term ecosystem growth.
+</section>
+
+<section class="team-grid">
+
+  <div class="member">
+    <img src="Giuseppe Foto.jpeg" alt="Founder">
+    <h3>Giuseppe Quero</h3>
+    <div class="role">FOUNDER & CEO</div>
+    <p>
+      Leading the vision, strategy and development of the SexCoin ecosystem.
+    </p>
+  </div>
+
+  <div class="member">
+    <img src="Massimo Foto.jpeg" alt="CTO">
+    <h3>Massimo Macaru</h3>
+    <div class="role">Technical Manager</div>
+    <p>
+      Responsible for blockchain infrastructure, smart contracts and security.
+    </p>
+  </div>
+
+  <div class="member">
+    <img src="marketing.jpg" alt="Marketing">
+    <h3>Sofia Maioli</h3>
+    <div class="role">ADMINISTRATION</div>
+    <p>
+      Oversees administration, documentation and daily business operations
+    </p>
+  </div>
+
+</section>
+
+<footer class="footer">
+  © 2026 SexCoin
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display =
+  menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>

@@ -1,1 +1,2 @@
-# SXCSite
+# SexCoin-Site
+SexCoin Project

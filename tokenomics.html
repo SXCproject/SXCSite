@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SexCoin - Tokenomics</title>
+<link rel="icon" type="image/png" sizes="192x192" href="Slogo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  overflow-x:hidden;
+}
+
+/* SOFT CRYPTO GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(255,0,0,0.07), transparent 70%);
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
+
+/* HEADER */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  z-index:1000;
+}
+
+/* HEADER LOGO (hover spin) */
+.header-logo{
+  height:65px;
+  transition:transform 0.6s ease;
+  transform-style:preserve-3d;
+}
+
+.header-logo:hover{
+  transform:rotateY(360deg);
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  gap:35px;
+}
+
+.menu a{
+  color:#333;
+  text-decoration:none;
+  font-family:'Orbitron', sans-serif;
+  font-size:0.9rem;
+  letter-spacing:1px;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  color:#ff2a2a;
+  transform:translateY(-2px);
+}
+
+/* BUTTON */
+.buy-btn{
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid rgba(255,0,0,0.25);
+  background:#fff;
+  color:#ff2a2a;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.buy-btn:hover{
+  background:#ff2a2a;
+  color:white;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:28px;
+  color:#333;
+  cursor:pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:75px;
+  left:0;
+  width:100%;
+  background:white;
+  flex-direction:column;
+  text-align:center;
+  z-index:999;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+.mobile-menu a{
+  padding:16px;
+  display:block;
+  color:#333;
+  font-family:'Orbitron', sans-serif;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.mobile-menu a:hover{
+  background:rgba(255,0,0,0.05);
+  color:#ff2a2a;
+}
+
+/* HERO */
+.hero{
+  padding-top:160px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:4.5rem;
+  font-family:'Playfair Display', serif;
+  color:#ff2a2a;
+  letter-spacing:2px;
+}
+
+.subtitle{
+  margin-top:12px;
+  color:#666;
+  letter-spacing:3px;
+  font-size:0.95rem;
+}
+
+/* TABLE */
+.table-wrapper{
+  width:90%;
+  max-width:1000px;
+  margin:60px auto;
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+}
+
+th{
+  background:#ff2a2a;
+  color:white;
+  padding:18px;
+  font-family:'Orbitron', sans-serif;
+}
+
+td{
+  padding:18px;
+  text-align:center;
+  color:#444;
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+/* BOXES */
+.desc{
+  width:90%;
+  max-width:1100px;
+  margin:80px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:25px;
+}
+
+.box{
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:22px;
+  padding:35px;
+  transition:0.4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  border-color:rgba(255,0,0,0.2);
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:50px;
+  color:#888;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .menu,
+  .buy-btn{
+    display:none;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .header{
+    padding:0 18px;
+    height:70px;
+  }
+
+  .header-logo{
+    height:45px;
+  }
+
+  .hero{
+    padding-top:130px;
+  }
+
+  .hero h1{
+    font-size:3rem;
+  }
+
+  .subtitle{
+    font-size:0.8rem;
+  }
+
+  body{
+    cursor:auto;
+  }
+
+  .cursor-dot,
+  .cursor-glow{
+    display:none;
+  }
+}
+
+/* =========================
+   CURSORE PRO
+========================= */
+
+body{
+  cursor:none;
+}
+
+.cursor-dot{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background:#ff2a2a;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+}
+
+.cursor-glow{
+  position:fixed;
+  width:40px;
+  height:40px;
+  background:rgba(255,42,42,0.15);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:transform 0.08s linear;
+}
+
+.cursor-click{
+  position:fixed;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:2px solid rgba(255,42,42,0.4);
+  pointer-events:none;
+  z-index:9997;
+  transform:translate(-50%,-50%) scale(0);
+  animation:clickPulse 0.4s ease-out;
+}
+
+@keyframes clickPulse{
+  0%{ transform:translate(-50%,-50%) scale(0.2); opacity:1; }
+  100%{ transform:translate(-50%,-50%) scale(1.6); opacity:0; }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <img src="Slogo.png" class="header-logo">
+
+  <nav class="menu">
+    <a href="index.html">HOME</a>
+    <a href="tokenomics.html">TOKENOMICS</a>
+    <a href="how-it-works.html">HOW IT WORKS</a>
+    <a href="partners.html">PARTNERS</a>
+    <a href="Team.html">TEAM</a>
+  </nav>
+
+  <a class="buy-btn" href="#">JOIN ECOSYSTEM</a>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">HOME</a>
+  <a href="tokenomics.html">TOKENOMICS</a>
+  <a href="how-it-works.html">HOW IT WORKS</a>
+  <a href="partners.html">PARTNERS</a>
+  <a href="#">JOIN ECOSYSTEM</a>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-glow"></div>
+
+<section class="hero">
+  <h1>TOKENOMICS</h1>
+  <div class="subtitle">REWARD-BASED ECONOMY STRUCTURE</div>
+</section>
+
+<div class="table-wrapper">
+<table>
+<tr>
+  <th>CATEGORY</th>
+  <th>PERCENTAGE</th>
+  <th>ALLOCATION</th>
+</tr>
+
+<tr><td>Cashback Rewards</td><td>70%</td><td>700,000,000</td></tr>
+<tr><td>Liquidity Pool</td><td>10%</td><td>100,000,000</td></tr>
+<tr><td>Team</td><td>10%</td><td>100,000,000</td></tr>
+<tr><td>Marketing</td><td>5%</td><td>50,000,000</td></tr>
+<tr><td>Development</td><td>5%</td><td>50,000,000</td></tr>
+
+</table>
+</div>
+
+<section class="desc">
+
+<div class="box">
+  <h2>TOTAL SUPPLY</h2>
+  <p>1B fixed supply designed for long-term ecosystem rewards and scalable digital utility.</p>
+</div>
+
+<div class="box">
+  <h2>CASHBACK SYSTEM</h2>
+  <p>Users earn SexCoin through ecosystem participation and partner platform engagement.</p>
+</div>
+
+<div class="box">
+  <h2>LIQUIDITY</h2>
+  <p>Structured allocation supporting market stability and sustainable token circulation.</p>
+</div>
+
+<div class="box">
+  <h2>GROWTH</h2>
+  <p>Resources dedicated to expansion, integrations and next-generation platform development.</p>
+</div>
+
+</section>
+
+<footer class="footer">
+  © 2026 SexCoin
+</footer>
+
+<script>
+
+function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+/* cursor movement */
+const dot = document.querySelector(".cursor-dot");
+const glow = document.querySelector(".cursor-glow");
+
+let mouseX = 0;
+let mouseY = 0;
+let glowX = 0;
+let glowY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  dot.style.left = mouseX + "px";
+  dot.style.top = mouseY + "px";
+});
+
+function animate(){
+  glowX += (mouseX - glowX) * 0.15;
+  glowY += (mouseY - glowY) * 0.15;
+
+  glow.style.left = glowX + "px";
+  glow.style.top = glowY + "px";
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* click effect */
+document.addEventListener("click", (e) => {
+  const click = document.createElement("div");
+  click.className = "cursor-click";
+  click.style.left = e.clientX + "px";
+  click.style.top = e.clientY + "px";
+
+  document.body.appendChild(click);
+
+  setTimeout(() => click.remove(), 400);
+});
+
+</script>
+
+</body>
+</html>

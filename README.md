@@ -1,2 +1,2 @@
-# SexCoin-Site
-SexCoin Project
+# SxCoin-Site
+SxCoin Project

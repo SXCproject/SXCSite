@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service - SexCoin</title>
+<link rel="icon" type="image/png" sizes="192x192" href="Slogo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Arial, sans-serif;background:#ffffff;color:#1a1a1a;overflow-x:hidden;}
+.header{position:fixed;top:0;width:100%;height:75px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(255,255,255,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.08);z-index:1000;}
+.logo-small{height:65px;}
+.menu{display:flex;gap:30px;}
+.menu a{color:#333;text-decoration:none;font-family:'Orbitron', sans-serif;font-size:0.9rem;transition:0.3s;}
+.menu a:hover{color:#ff2a2a;}
+.hamburger{display:none;font-size:26px;cursor:pointer;}
+.mobile-menu{display:none;position:fixed;top:75px;left:0;width:100%;background:white;flex-direction:column;text-align:center;z-index:999;}
+.mobile-menu a{padding:16px;display:block;color:#333;text-decoration:none;font-family:'Orbitron', sans-serif;}
+.content{max-width:800px;margin:140px auto 80px;padding:0 24px;line-height:1.7;color:#333;}
+.content h1{font-family:'Orbitron', sans-serif;color:#ff2a2a;margin-bottom:10px;font-size:2rem;}
+.content .updated{color:#888;font-size:0.85rem;margin-bottom:40px;}
+.content h2{margin-top:36px;margin-bottom:12px;font-size:1.2rem;color:#111;}
+.content p, .content li{margin-bottom:12px;}
+.content ul{padding-left:20px;}
+.content a{color:#ff2a2a;}
+.footer{text-align:center;padding:40px;color:#888;border-top:1px solid rgba(0,0,0,0.08);}
+.footer a{color:#ff2a2a;text-decoration:none;}
+.footer .links{margin-bottom:14px;}
+.footer .links a{margin:0 8px;color:#666;}
+@media(max-width:900px){.menu{display:none;}.hamburger{display:block;}.header{padding:0 15px;height:70px;}.logo-small{height:45px;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<img src="Slogo.png" class="logo-small">
+<nav class="menu">
+<a href="index.html">HOME</a>
+<a href="tokenomics.html">TOKENOMICS</a>
+<a href="how-it-works.html">HOW IT WORKS</a>
+<a href="partners.html">PARTNERS</a>
+<a href="Team.html">TEAM</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">HOME</a>
+<a href="tokenomics.html">TOKENOMICS</a>
+<a href="how-it-works.html">HOW IT WORKS</a>
+<a href="partners.html">PARTNERS</a>
+<a href="Team.html">TEAM</a>
+</div>
+
+<div class="content">
+<h1>Terms of Service</h1>
+<p class="updated">Last updated: August 2026</p>
+
+<p>By accessing sexcoin.info (the "Site") or interacting with the SexCoin (SXC) token or ecosystem, you agree to be bound by these Terms of Service. If you do not agree, please do not use the Site.</p>
+
+<h2>1. Eligibility</h2>
+<p>You must be at least 18 years old to use this Site or interact with the SexCoin ecosystem. By using the Site, you represent that you meet this requirement.</p>
+
+<h2>2. Nature of the Project</h2>
+<p>SexCoin is an independent, decentralized token deployed on the Ethereum blockchain. It is not issued, endorsed, or guaranteed by any bank, government, or financial institution.</p>
+
+<h2>3. No Financial Advice</h2>
+<p>Nothing on this Site constitutes financial, investment, legal, or tax advice. Any figures, statistics, or projections presented (including references to "cashback" or rewards) are illustrative and not guarantees of future performance or value.</p>
+
+<h2>4. Assumption of Risk</h2>
+<p>Cryptocurrencies are highly volatile and speculative assets. You acknowledge that you may lose some or all of the value of any tokens you acquire, and that you are solely responsible for your own decisions. See our <a href="disclaimer.html">Risk Disclaimer</a> for more detail.</p>
+
+<h2>5. Intellectual Property</h2>
+<p>All content, branding, and design on this Site are the property of the SexCoin project unless otherwise stated, and may not be copied or reproduced without permission.</p>
+
+<h2>6. Third-Party Links</h2>
+<p>This Site may contain links to third-party websites or services. We are not responsible for the content, accuracy, or practices of any third-party site.</p>
+
+<h2>7. Limitation of Liability</h2>
+<p>To the fullest extent permitted by law, SexCoin and its contributors shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of the Site or the SXC token.</p>
+
+<h2>8. Changes to the Terms</h2>
+<p>We may revise these Terms at any time. Continued use of the Site after changes constitutes acceptance of the updated Terms.</p>
+
+<h2>9. Governing Law</h2>
+<p>These Terms shall be governed by applicable law in the jurisdiction where the project operates, without regard to conflict-of-law principles.</p>
+
+<h2>10. Contact</h2>
+<p>For questions about these Terms, contact us at <a href="mailto:info@sexcoin.info">info@sexcoin.info</a>.</p>
+</div>
+
+<div class="footer">
+<div class="links">
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="disclaimer.html">Risk Disclaimer</a>
+</div>
+<p>Contact us: <a href="mailto:info@sexcoin.info">info@sexcoin.info</a></p>
+<p style="margin-top:10px;">© 2026 SexCoin</p>
+</div>
+
+<script>
+function toggleMenu(){
+const menu = document.getElementById("mobileMenu");
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+</body>
+</html>

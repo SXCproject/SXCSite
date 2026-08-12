@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Disclaimer - SexCoin</title>
+<link rel="icon" type="image/png" sizes="192x192" href="Slogo2.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Arial, sans-serif;background:#ffffff;color:#1a1a1a;overflow-x:hidden;}
+.header{position:fixed;top:0;width:100%;height:75px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(255,255,255,0.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.08);z-index:1000;}
+.logo-small{height:65px;}
+.menu{display:flex;gap:30px;}
+.menu a{color:#333;text-decoration:none;font-family:'Orbitron', sans-serif;font-size:0.9rem;transition:0.3s;}
+.menu a:hover{color:#ff2a2a;}
+.hamburger{display:none;font-size:26px;cursor:pointer;}
+.mobile-menu{display:none;position:fixed;top:75px;left:0;width:100%;background:white;flex-direction:column;text-align:center;z-index:999;}
+.mobile-menu a{padding:16px;display:block;color:#333;text-decoration:none;font-family:'Orbitron', sans-serif;}
+.content{max-width:800px;margin:140px auto 80px;padding:0 24px;line-height:1.7;color:#333;}
+.content h1{font-family:'Orbitron', sans-serif;color:#ff2a2a;margin-bottom:10px;font-size:2rem;}
+.content .updated{color:#888;font-size:0.85rem;margin-bottom:40px;}
+.content h2{margin-top:36px;margin-bottom:12px;font-size:1.2rem;color:#111;}
+.content p, .content li{margin-bottom:12px;}
+.content ul{padding-left:20px;}
+.content a{color:#ff2a2a;}
+.warn{background:#fff5f5;border:1px solid rgba(255,42,42,0.25);border-radius:12px;padding:20px;margin-bottom:30px;font-weight:bold;}
+.footer{text-align:center;padding:40px;color:#888;border-top:1px solid rgba(0,0,0,0.08);}
+.footer a{color:#ff2a2a;text-decoration:none;}
+.footer .links{margin-bottom:14px;}
+.footer .links a{margin:0 8px;color:#666;}
+@media(max-width:900px){.menu{display:none;}.hamburger{display:block;}.header{padding:0 15px;height:70px;}.logo-small{height:45px;}}
+</style>
+</head>
+<body>
+
+<header class="header">
+<img src="Slogo.png" class="logo-small">
+<nav class="menu">
+<a href="index.html">HOME</a>
+<a href="tokenomics.html">TOKENOMICS</a>
+<a href="how-it-works.html">HOW IT WORKS</a>
+<a href="partners.html">PARTNERS</a>
+<a href="Team.html">TEAM</a>
+</nav>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">HOME</a>
+<a href="tokenomics.html">TOKENOMICS</a>
+<a href="how-it-works.html">HOW IT WORKS</a>
+<a href="partners.html">PARTNERS</a>
+<a href="Team.html">TEAM</a>
+</div>
+
+<div class="content">
+<h1>Risk Disclaimer</h1>
+<p class="updated">Last updated: August 2026</p>
+
+<div class="warn">
+SexCoin (SXC) is a highly speculative digital asset. You should not interact with it, acquire it, or rely on it unless you fully understand and accept the risks described below.
+</div>
+
+<h2>1. Not Financial Advice</h2>
+<p>Nothing published on this Site, in our documentation, or in any communication from the SexCoin team constitutes financial, investment, legal, or tax advice. You should consult an independent, licensed professional before making any decisions related to SXC.</p>
+
+<h2>2. No Guarantee of Value or Returns</h2>
+<p>Any reference to "cashback," rewards, growth statistics, or user metrics on this Site is illustrative or historical only and does not represent a promise, guarantee, or forecast of future performance. Token value can go up or down significantly, and may go to zero.</p>
+
+<h2>3. Volatility and Market Risk</h2>
+<p>Cryptocurrency markets are highly volatile and can be affected by factors outside the project's control, including regulatory changes, market sentiment, liquidity, and macroeconomic conditions.</p>
+
+<h2>4. Regulatory Risk</h2>
+<p>The regulatory status of cryptocurrencies varies by jurisdiction and continues to evolve. It is your responsibility to determine whether acquiring or using SXC is lawful in your jurisdiction.</p>
+
+<h2>5. Technology Risk</h2>
+<p>Blockchain technology and smart contracts, while designed to be secure, may contain unforeseen vulnerabilities. We do not guarantee the SXC smart contract is free from bugs or exploits.</p>
+
+<h2>6. Self-Custody Responsibility</h2>
+<p>If you hold SXC in a self-custody wallet, you are solely responsible for securing your private keys and seed phrase. Loss of these credentials may result in permanent loss of access to your assets. The SexCoin team cannot recover lost funds or reset wallet access.</p>
+
+<h2>7. Age Restriction</h2>
+<p>Given the nature of this project, access is restricted to individuals aged 18 or older. By interacting with SXC or this Site, you confirm that you meet this requirement under the laws applicable to you.</p>
+
+<h2>8. Do Your Own Research (DYOR)</h2>
+<p>You are strongly encouraged to conduct your own independent research and, where appropriate, seek professional advice before engaging with SXC in any way.</p>
+
+<h2>9. Contact</h2>
+<p>Questions about this disclaimer can be sent to <a href="mailto:info@sexcoin.info">info@sexcoin.info</a>.</p>
+</div>
+
+<div class="footer">
+<div class="links">
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a> |
+<a href="disclaimer.html">Risk Disclaimer</a>
+</div>
+<p>Contact us: <a href="mailto:info@sexcoin.info">info@sexcoin.info</a></p>
+<p style="margin-top:10px;">© 2026 SexCoin</p>
+</div>
+
+<script>
+function toggleMenu(){
+const menu = document.getElementById("mobileMenu");
+menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+</script>
+</body>
+</html>
